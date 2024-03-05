@@ -50,7 +50,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
         book = books[isbn];
         reviews = book.review;
         reviews[username] = newReview;
-        res.send({"message": "Review updated successfully"})
+        res.send({"message": "Review for book with ISBN " + isbn + " added/updated"})
     }
 });
 
@@ -63,7 +63,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
         book = books[isbn];
         review = book.review;
         delete review[username];
-        res.json({"message": "Review deleted successfully"})
+        res.json({"message": "the review for the book with ISBN " + isbn + " posted by the user " + username + " has been deleted"})
     }
 });
 
